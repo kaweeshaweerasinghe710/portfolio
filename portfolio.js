@@ -8,23 +8,9 @@ const projects = {
         liveLink: "#",
         githubLink: "#"
     },
+    
+    
     2: {
-        title: "Task Management App",
-        description: "A collaborative task management application with real-time updates. Users can create projects, assign tasks, set deadlines, and track progress. Features drag-and-drop functionality and team collaboration tools.",
-        image: "https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800",
-        technologies: ["React", "Firebase", "Material-UI", "Socket.io", "Redux", "PWA"],
-        liveLink: "#",
-        githubLink: "#"
-    },
-    3: {
-        title: "Weather Dashboard",
-        description: "An interactive weather dashboard that provides current weather conditions, 7-day forecast, and weather maps. Features location-based weather data, favorite locations, and detailed weather analytics.",
-        image: "https://images.pexels.com/photos/270348/pexels-photo-270348.jpeg?auto=compress&cs=tinysrgb&w=800",
-        technologies: ["JavaScript", "OpenWeather API", "Chart.js", "CSS3", "Geolocation API"],
-        liveLink: "#",
-        githubLink: "#"
-    },
-    4: {
         title: "Portfolio Website",
         description: "A responsive portfolio website showcasing projects and skills. Built with modern web technologies, features smooth animations, contact form integration, and optimized performance for all devices.",
         image: "https://images.pexels.com/photos/374074/pexels-photo-374074.jpeg?auto=compress&cs=tinysrgb&w=800",
@@ -32,10 +18,10 @@ const projects = {
         liveLink: "#",
         githubLink: "#"
     },
-    5: {
+    3: {
         title: "Restaurant Website",
         description: "A modern restaurant website with online reservation system, menu display, and customer reviews. Features include table booking, order management, and integration with social media platforms.",
-        image: "https://images.pexels.com/photos/590016/pexels-photo-590016.jpg?auto=compress&cs=tinysrgb&w=800",
+        image: "assets/restuarant.jpeg",
         technologies: ["Vue.js", "PHP", "MySQL", "Bootstrap", "PayPal API", "Google Maps API"],
         liveLink: "#",
         githubLink: "#"
@@ -276,26 +262,54 @@ function showErrors(errors) {
 }
 
 function showSuccessMessage() {
-    // Create success message
-    const successDiv = document.createElement('div');
-    successDiv.className = 'success-message';
-    successDiv.style.cssText = `
-        background: #10B981;
+    // Remove any existing alert
+    const existingAlert = document.querySelector('.success-alert');
+    if (existingAlert) existingAlert.remove();
+
+    // Create alert-style success message
+    const alertDiv = document.createElement('div');
+    alertDiv.className = 'success-alert';
+    alertDiv.style.cssText = `
+        position: fixed;
+        top: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #13ae7aff;
         color: white;
-        padding: 1rem;
-        border-radius: 8px;
-        margin-bottom: 1rem;
-        text-align: center;
+        padding: 1rem 2rem;
+        border-radius: 6px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        z-index: 9999;
+        font-size: 1rem;
         font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        min-width: 280px;
+        justify-content: center;
     `;
-    successDiv.textContent = 'Thank you! Your message has been sent successfully.';
-    
-    // Insert before form
-    contactForm.parentNode.insertBefore(successDiv, contactForm);
-    
+    alertDiv.textContent = '✅ Thank you! Your message has been sent successfully.';
+
+    // Add close button
+    const closeBtn = document.createElement('button');
+    closeBtn.textContent = '×';
+    closeBtn.style.cssText = `
+        background: transparent;
+        border: none;
+        color: white;
+        font-size: 1.3rem;
+        margin-left: 1rem;
+        cursor: pointer;
+        line-height: 1;
+    `;
+    closeBtn.onclick = () => alertDiv.remove();
+    alertDiv.appendChild(closeBtn);
+
+    document.body.appendChild(alertDiv);
+
     // Remove after 5 seconds
     setTimeout(() => {
-        successDiv.remove();
+        alertDiv.remove();
     }, 5000);
 }
 

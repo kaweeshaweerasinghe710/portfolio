@@ -23,7 +23,7 @@ body {
     top: 0;
     width: 100%;
     background: #020618;
-    background: ;
+    /* background: ; */
     backdrop-filter: blur(10px);
     z-index: 1000;
     transition: all 0.3s ease;
@@ -101,6 +101,7 @@ body {
     text-align: center;
     margin-bottom: 1rem;
     color: #f4f6f8;
+    padding-top: 50px;
     
 }
 
@@ -134,13 +135,39 @@ body {
 
 .home-title {
       position: relative;
-      animation: slideRight 2s ease-in-out forwards;
+    
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #07a329;
       font-size: 3.5rem;
       font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: 700;
     margin-bottom: 1rem;
     line-height: 1.2;
     }
+    /* Typing Animation */
+.typing-text {
+  display: inline-block;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #c0c6c3;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #222; /* caret */
+  width: 0; /* Start hidden */
+  animation: typing 2s steps(20, end) forwards, blink-caret 0.75s step-end infinite;
+}
+
+/* Typing keyframes */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  50% { border-color: transparent }
+}
+
 
     @keyframes slideRight {
       from { transform: translateX(-100%); }
@@ -181,12 +208,12 @@ body {
 
 .btn-primary {
     background:transparent;
-    color: rgb(36, 165, 51);
+    color: rgb(11, 158, 55);
     border-color: white;
 }
 
 .btn-primary:hover {
-     background: rgb(11, 158, 55);
+     background: rgb(77, 216, 119);
     color: #0d0d0d;
     transform: translateY(-2px);
     box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
@@ -199,7 +226,7 @@ body {
 }
 
 .btn-secondary:hover {
-    background: rgb(35, 185, 42);
+    background: rgb(77, 216, 119);
     color: #0d0d0d;
     transform: translateY(-2px);
 }
@@ -350,7 +377,7 @@ body {
 }
 
 .contact-item p {
-    color: #3B82F6;
+    color: #efefef;
     
     
 }
@@ -361,14 +388,14 @@ body {
 }
 
 .social-links a {
-    color: #3B82F6;
+    color: #eeeff2;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-    color: #fafdfa;
+    color: #3c33b2;
 }
 
 .form-group {
@@ -666,12 +693,15 @@ html {
     animation: fadeInUp 0.6s ease-out;
 }
 /*portfolio section*/
-
+ .portfolio-section{
+    background-color: #020618;
+ }
 .container {
   width: 90%;
   max-width: 1200px;
   margin: auto;
   padding: 50px 0;
+
 }
 
 .section-title {
@@ -679,7 +709,8 @@ html {
   font-size: 2.5rem;
   margin-bottom: 40px;
   font-weight: 700;
-  color: #222;
+  color: #f4f1f1;
+  
 }
 
 /* Services */
@@ -687,14 +718,15 @@ html {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 25px;
+  background-color: #020618;
 }
 
 .service-card {
-  background: #fff;
+  background: rgb(60, 61, 61);
   padding: 25px;
   border-radius: 16px;
   text-align: center;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
   cursor: pointer;
 }
@@ -712,7 +744,7 @@ html {
 .service-card h4 {
   margin-bottom: 10px;
   font-size: 1.2rem;
-  color: #111;
+  color: #0c952f;
 }
 
 /* Projects */
@@ -720,10 +752,11 @@ html {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
+  background-color: #020618;
 }
 
 .project-card {
-  background: #fff;
+  background:rgb(36, 34, 40);
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0,0,0,0.08);
@@ -746,7 +779,7 @@ html {
 
 .project-info {
   padding: 20px;
-  background: #fff;
+  background: rgb(58, 56, 58);
   position: relative;
   z-index: 2;
 }
@@ -754,11 +787,11 @@ html {
 .project-info h4 {
   font-size: 1.3rem;
   margin-bottom: 8px;
-  color: #111;
+  color: #f6f2f2;
 }
 
 .project-info p {
-  color: #666;
+  color: #f8f5f5;
   font-size: 0.95rem;
 }
 

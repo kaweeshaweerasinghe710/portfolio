@@ -9,7 +9,7 @@
   // Initialize with your public key (from EmailJS dashboard)
   emailjs.init({ publicKey: "ji6zAfcJWUmLTJsRp" });
 </script>
-    <link rel="stylesheet" href="portfolio.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -46,7 +46,7 @@
         <div class="container">
             <div class="home-content">
                 <div class="home-text">
-                    <h1 class="home-title">Hi, I'm kaweesha weerasinghe</h1><br>
+                    <h1 class="home-title typing-text">Hi, I'm kaweesha<br>weerasinghe</h1><br><br>
                     <p class="home-subtitle">Full Stack Developer 
                         <br>& UI/UX Designer </p><br><br>
                     
@@ -63,19 +63,17 @@
         </div>
     </section>
 
-    <!-- About Section -->
+     <!-- About Section -->
     <section id="about" class="section about-section">
         <div class="container">
             <h2 class="section-title">About Me</h2><br><br>
             <p class="section-description">
-            Hi! I’m <span class="highlight">Kaweesha</span>, an undergraduate at the University of Moratuwa, pursuing a<span class="highlight"> BSc Hons in Information Technology</span>.
-            My journey into technology began with programming and frontend development.<br><br>
-            I focus on building user-friendly, responsive, and efficient websites that bring ideas to life on the web.
-            I’m passionate about learning new tools and technologies that help me improve my skills and create better digital experiences.<br><br>
-
-             Outside of coding, I like exploring new trends in technology and experimenting with creative projects to sharpen my development journey.
+                Hi! I’m <span class="highlight">Kaweesha</span>, an undergraduate at the University of Moratuwa, pursuing a<span class="highlight"> BSc Hons in Information Technology</span>.
+                My journey into technology began with programming and frontend development.<br><br>
+                I focus on building user-friendly, responsive, and efficient websites that bring ideas to life on the web.
+                I’m passionate about learning new tools and technologies that help me improve my skills and create better digital experiences.<br><br>
+                Outside of coding, I like exploring new trends in technology and experimenting with creative projects to sharpen my development journey.
             </p>
-            
             <div class="about-content">
                 <!-- Skills -->
                 <div class="about-card">
@@ -89,10 +87,8 @@
                         <span class="skill-tag">Docker</span>
                         <span class="skill-tag">Git</span>
                         <span class="skill-tag">Figma</span>
-                       
                     </div>
                 </div>
-
                 <!-- Education -->
                 <div class="about-card">
                     <h3 class="about-card-title">Education</h3>
@@ -110,8 +106,7 @@
         </div>
     </section>
 
- <!-- Portfolio Section -->
-<section id="portfolio" class="portfolio-section">
+    <section id="portfolio" class="portfolio-section">
   <div class="container">
 
     <!-- Services -->
@@ -146,8 +141,8 @@
       <div class="projects-grid">
 
         <!-- Project Card -->
-        <div class="project-card">
-          <img src="jewellery shop.png" alt="E-commerce Platform">
+        <div class="project-card" data-project="1">
+          <img src="/assets/jewellery.jpeg" alt="E-commerce Platform">
           <div class="project-info">
             <h4>E-commerce Platform</h4>
             <p>Click to view details</p>
@@ -155,8 +150,8 @@
         </div>
 
         <!-- Project Card -->
-        <div class="project-card">
-          <img src="images.jpeg" alt="Portfolio Website">
+        <div class="project-card" data-project="2">
+          <img src="/assets/portfolio.jpeg" alt="Portfolio Website">
           <div class="project-info">
             <h4>Portfolio Website</h4>
             <p>Click to view details</p>
@@ -164,8 +159,8 @@
         </div>
 
         <!-- Project Card -->
-        <div class="project-card">
-          <img src="restuarant.jpeg" alt="Restaurant Website">
+        <div class="project-card" data-project="3">
+          <img src="/assets/restuarant.jpeg" alt="Restaurant Website">
           <div class="project-info">
             <h4>Restaurant Website</h4>
             <p>Click to view details</p>
@@ -177,13 +172,31 @@
 
   </div>
 </section>
+ <!-- Project Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body">
+                <img id="modalImage" src="" alt="Project Image" class="modal-img">
+    
+                <div class="modal-info">
+                    <h3 id="modalTitle">Project Title</h3>
+                    <p id="modalDescription">Project description goes here.</p>
+                    <div class="modal-technologies">
+                        <h4>Technologies Used:</h4>
+                        <div id="modalTechnologies" class="tech-tags"></div>
+                    </div>
+                    <div class="modal-links">
+                        <a href="#" class="btn btn-primary" id="modalLiveLink">View Live</a>
+                        <a href="#" class="btn btn-secondary" id="modalGithubLink">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<!-- Link external CSS -->
-<link rel="stylesheet" href="style.css">
-
-
-
-    <!-- Contact Section -->
+<!-- Contact Section -->
     <section id="contact" class="section contact-section">
         <div class="container">
             <h2 class="section-title">Get In Touch</h2><br><br>
@@ -210,8 +223,8 @@
                         <div>
                             <h4>Social Media</h4>
                             <div class="social-links">
-                                <a href="www.linkedin.com/in/kaweesha-weerasinghe-749850328">LinkedIn</a>
-                                <a href="kaweeshaweerasinghe710">GitHub</a>
+                                <a href="https://www.linkedin.com/in/kaweesha-weerasinghe-749850328">LinkedIn</a>
+                                <a href="https://kaweeshaweerasinghe710">GitHub</a>
                                 <a href="https://www.facebook.com/kaweesha.weerasinghe.973253?mibextid=ZbWKwL">Facebook</a>
                             </div>
                         </div>
@@ -239,30 +252,8 @@
         </div>
     </section>
 
-    <!-- Project Modal -->
-    <div id="projectModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div class="modal-body">
-                <img id="modalImage" src="" alt="Project Image" class="modal-img">
-    
-                <div class="modal-info">
-                    <h3 id="modalTitle">Project Title</h3>
-                    <p id="modalDescription">Project description goes here.</p>
-                    <div class="modal-technologies">
-                        <h4>Technologies Used:</h4>
-                        <div id="modalTechnologies" class="tech-tags"></div>
-                    </div>
-                    <div class="modal-links">
-                        <a href="#" class="btn btn-primary" id="modalLiveLink">View Live</a>
-                        <a href="#" class="btn btn-secondary" id="modalGithubLink">GitHub</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
+<!-- Link external CSS -->
+<link rel="stylesheet" href="style.css">
 
     <script src="portfolio.js"></script>
 </body>
