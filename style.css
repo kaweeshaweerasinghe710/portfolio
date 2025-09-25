@@ -11,6 +11,21 @@ body {
     overflow-x: hidden;
 }
 
+/* Responsive body font size and padding */
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 1rem;
+        padding: 0 5px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 0.95rem;
+        padding: 0 2px;
+    }
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
