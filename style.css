@@ -132,6 +132,14 @@ body {
     align-items: center;
     max-width: 1000px;
 }
+/* Tablet / small screens */
+@media screen and (max-width: 768px) {
+    .home-content {
+        grid-template-columns: 1fr; /* single column */
+        gap: 2rem;
+        text-align: center;
+    }
+}
 
 .home-title {
       position: relative;
@@ -145,6 +153,14 @@ body {
     margin-bottom: 1rem;
     line-height: 1.2;
     }
+    /* Mobile adjustments */
+@media screen and (max-width: 768px) {
+    .home-title {
+        white-space: normal;   /* allow wrapping */
+        font-size: 2.5rem;     /* smaller font on mobile */
+        border-right: 2px solid #07a329; /* optional smaller caret */
+    }
+}
     /* Typing Animation */
 .typing-text {
   display: inline-block;
@@ -232,7 +248,7 @@ body {
 }
 
 .profile-img {
-    width: 400px;;
+    width: 100%;
     height: 400px;
     object-fit:cover;
     border-radius: 50%;
@@ -946,4 +962,9 @@ html {
   .nav-menu li {
     padding: 0.8rem 0;
   }
+}
+@media screen and (max-width: 768px) {
+    .home-content {
+        grid-template-columns: 1fr !important;
+    }
 }
